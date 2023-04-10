@@ -4,13 +4,22 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://img.freepik.com/free-vector/cosmic-background-alien-planet-deserted-landscape-with-mountains_107791-6400.jpg?w=1380&t=st=1681136010~exp=1681136610~hmac=3a476ef36679fcb40a95a0a8047f4cd3bdce885ff33dbb241b235e20eb8d7318') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background: rebeccapurple;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,6 +39,25 @@ header {
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #06ebb2;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
 }
 
 .navigation .btnLogin-popup {
